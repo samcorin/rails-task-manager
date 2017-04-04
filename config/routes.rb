@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root to: 'tasks#index'
 
-  # resources :restaurants
-  # resources :restaurants, only: [:create, :index, :destory]
-  # resources :restaurants, except: ['what you dont want']
+  # resources :tasks
+  # resources :tasks, only: [:new, :create, :show, :index, :edit, :update, :destory]
+  # resources :tasks, except: ['what you dont want']
 
   get 'tasks/new', to: 'tasks#new', as: 'new_task'
   post 'tasks', to: 'tasks#create'

@@ -1,13 +1,17 @@
-<h1>Tasks#index / Home</h1>
+<h1>Todo</h1>
 
-<ul>
+<ul class="flex-box">
   <% @tasks.each do |task| %>
     <li>
-    <strong><%= link_to task.name, task_path(task) %></strong> - <%= task.description %>
-    <%= link_to "Edit", edit_task_path(task)%>
-    <%= link_to "Delete", task_path(task),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
-    </li>
+    <div class="card">
+      <strong><%= link_to task.name, task_path(task) %></strong>
+      <p><%= task.description %></p>
+      <%= link_to "Edit", edit_task_path(task)%>
+      -
+      <%= link_to "Delete", task_path(task),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
+      </li>
+    </div>
   <% end %>
 </ul>
